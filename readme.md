@@ -18,10 +18,10 @@ By default, this software will just display the value of the K30 sensor on the N
 
 * Modify the `ssid` and `password` for your WiFi network in `src/main.cpp`.
 * Follow these [setup steps for Google Sheets](https://github.com/StorageB/Google-Sheets-Logging#instructions-for-google-sheets) substituting the google script for the one from this repo (`google-scripts/date-and-value.gs`).
-* When you've got your scripts deployment ID you can then paste this into the `scriptId` property
-* Use the alternative `ledCo2Service` which takes these additional arguments to upload your data.
+* When you've got your scripts deployment ID you can then paste this into the `scriptId` property in `src/main.cpp`.
+* Use the alternative `ledCo2Service` which takes these additional arguments and uploads your data.
 
-(The google script we're using instead of the sample from step 5 is the example from the above repo, with a small modification to save only one value and adds a timestamp to each entry.)
+(The google script we're using has a small modification to save only one value and adds a timestamp to each entry.)
 
 ## Thanks to
 * https://github.com/StorageB/Google-Sheets-Logging#instructions-for-google-sheets
