@@ -21,12 +21,9 @@ public:
 
     boolean dataPushEnabled = false;
 
-    LedCo2Service (int readingInverval, int brightness, const char *ssid, const char *password) {
+    LedCo2Service (int readingInverval, int brightness) {
         this->readingInverval = readingInverval;
         this->brightness = brightness;
-
-        this->ssid = ssid;
-        this->password = password;
     }
 
     LedCo2Service (int readingInverval, int brightness, const char *ssid, const char *password, const char *scriptId) {
@@ -44,12 +41,12 @@ public:
 
         pixelMatrix.setup(this->brightness);
 
-        pixelMatrix.drawText("wifi");
-        connectToWifi(ssid, password);
-
         co2.setup();
 
         if (dataPushEnabled) {
+            pixelMatrix.drawText("wifi");
+            connectToWifi(ssid, password);
+
             pixelMatrix.drawText("data");
             dataPusher.setup(scriptId);
         }
